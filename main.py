@@ -1,13 +1,17 @@
 # Energy Drink Survey Calculator
 
-total_customers = 16500
-energy_drink_percentage = 0.15
-citrus_preference_percentage = 0.58
+print("Energy Drink Survey Calculator")
+print("=" * 40)
+print()
+
+total_customers = int(input("Enter the total number of customers surveyed: "))
+energy_drink_percentage = float(input("Enter the percentage who purchase energy drinks (e.g., 15 for 15%): ")) / 100
+citrus_preference_percentage = float(input("Enter the percentage who prefer citrus flavor (e.g., 58 for 58%): ")) / 100
 
 customers_buying_energy_drinks = total_customers * energy_drink_percentage
 customers_preferring_citrus = customers_buying_energy_drinks * citrus_preference_percentage
 
-print("Energy Drink Survey Results")
+print("\nEnergy Drink Survey Results")
 print("=" * 40)
 print(f"\nTotal customers surveyed: {total_customers:,}")
 print(f"\nCustomers purchasing energy drinks per week:")
