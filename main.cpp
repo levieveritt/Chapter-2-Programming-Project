@@ -9,7 +9,7 @@ int main() {
     double mpgTown;
     double mpgHighway;
 
-    cout << "Ocean Level Rise Projections" << endl;
+    cout << "Gas Tank Mileage Calculator" << endl;
     cout << "========================================" << endl;
     cout << " " << endl;
     cout << "Enter the tank size (in gallons): ";
