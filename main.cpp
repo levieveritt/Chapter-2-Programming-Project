@@ -1,23 +1,30 @@
 #include <iostream>
-#include <iomanip>
+#include <string>
+
 using namespace std;
 
 int main() {
-    const double RISE_RATE = 1.5;
+    // Relevant data: tank size, MPG in town, MPG on highway
+    double tankSize;
+    double mpgTown;
+    double mpgHighway;
 
-    double riseAfter5Years = RISE_RATE * 5;
-    double riseAfter7Years = RISE_RATE * 7;
-    double riseAfter10Years = RISE_RATE * 10;
+    cout << "Enter the tank size (in gallons): ";
+    cin >> tankSize;
 
-    cout << "Ocean Level Rise Projections" << endl;
-    cout << "========================================" << endl;
-    cout << fixed << setprecision(1);
-    cout << "\nAnnual rise rate: " << RISE_RATE << " mm/year" << endl;
-    cout << "\nProjected ocean level rise:" << endl;
-    cout << "  After 5 years:  " << riseAfter5Years << " mm" << endl;
-    cout << "  After 7 years:  " << riseAfter7Years << " mm" << endl;
-    cout << "  After 10 years: " << riseAfter10Years << " mm" << endl;
-    cout << "\n========================================" << endl;
+    cout << "Enter the MPG in town: ";
+    cin >> mpgTown;
+
+    cout << "Enter the MPG on the highway: ";
+    cin >> mpgHighway;
+
+    // Formula: distance = gallons * miles per gallon
+    double distanceTown = tankSize * mpgTown;
+    double distanceHighway = tankSize * mpgHighway;
+
+    // Display results
+    cout << "\nDistance you can travel in town: " << distanceTown << " miles" << endl;
+    cout << "Distance you can travel on the highway: " << distanceHighway << " miles" << endl;
 
     return 0;
 }
