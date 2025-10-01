@@ -1,4 +1,4 @@
-modules = ["python-3.11"]
+modules = ["python-3.11", "cpp-clang"]
 [agent]
 expertMode = true
 
@@ -18,9 +18,9 @@ args = "Energy Survey"
 name = "Energy Survey"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "python main.py"
-
 [workflows.workflow.metadata]
 outputType = "console"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "g++ -o main main.cpp && ./main"
