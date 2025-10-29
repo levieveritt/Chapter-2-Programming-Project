@@ -3,31 +3,36 @@
 
 using namespace std;
 
+using namespace std;
+
 int main() {
-    // Relevant data: tank size, MPG in town, MPG on highway
-    double tankSize;
-    double mpgTown;
-    double mpgHighway;
+    int year, month;
 
-    cout << "Gas Tank Mileage Calculator" << endl;
-    cout << "========================================" << endl;
-    cout << " " << endl;
-    cout << "Enter the tank size (in gallons): ";
-    cin >> tankSize;
+    cout << "Enter year: ";
+    cin >> year;
 
-    cout << "Enter the MPG in town: ";
-    cin >> mpgTown;
+    cout << "Enter month (1-12): ";
+    cin >> month;
 
-    cout << "Enter the MPG on the highway: ";
-    cin >> mpgHighway;
+    // Validate month input
+    if (month < 1 || month > 12) {
+        cout << "Invalid month. Month should be between 1 and 12." << endl;
+        return 1; // Indicate an error
+    }
 
-    // Formula: distance = gallons * miles per gallon
-    double distanceTown = tankSize * mpgTown;
-    double distanceHighway = tankSize * mpgHighway;
+    bool isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 
-    // Display results
-    cout << "\nDistance you can travel in town: " << distanceTown << " miles" << endl;
-    cout << "Distance you can travel on the highway: " << distanceHighway << " miles" << endl;
+    int daysInMonth;
+
+    if (month == 2) {
+        daysInMonth = isLeapYear ? 29 : 28;
+    } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+        daysInMonth = 30;
+    } else {
+        daysInMonth = 31;
+    }
+
+    cout << "Number of days in " << month << "/" << year << ": " << daysInMonth << endl;
 
     return 0;
 }
